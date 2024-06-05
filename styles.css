@@ -1,0 +1,445 @@
+/* Keyframes for Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container and Themes */
+.container {
+    margin: 20px; /* Memberikan space sebesar 20px di sekitar container */
+    padding: 20px;
+    background: white;
+    border-radius: 25px;
+    border: 0px solid #ddd;
+    box-shadow: 0 2px 4px rgba(172, 172, 172, 0.979);
+    overflow: hidden;
+    width: 100%;
+    max-width: 750px;
+    padding: 15px;
+    transition: background-color 0.3s, border 0.3s, box-shadow 0.3s;
+}
+
+.container.theme-default {
+    background-color: #fff;
+    border-color: #ddd;
+}
+.container.theme-black {
+    background-color: #282828;
+    border-color: #444;
+    color: #fff;
+}
+.container.theme-green {
+    background-color: #6add9c;
+    border-color: #81b29a;
+    color: #fff;
+}
+.container.theme-blue {
+    background-color: #3a6ea5;
+    border-color: #bbd1ea;
+    color: #fff;
+}
+.container.theme-red {
+    background-color: #bb0a21;
+    border-color: #f06d6a;
+    color: #fff;
+}
+.container.theme-yellow {
+    background-color: #ffc107;
+    border-color: #ffe082;
+    color: #fff;
+}
+
+/* Color Picker */
+.color-picker {
+    margin-top: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 10px;
+    background: #f7f7f765;
+}
+
+.color-picker-title {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+}
+
+.color-options {
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+.color-option {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 0 3px;
+    cursor: pointer;
+    transition: transform 0.3s, border 0.3s;
+}
+
+.container.theme-default {
+    background-color: #fff;
+    border-color: #ddd;
+}
+.container.theme-black {
+    background-color: #282828;
+    border-color: #444;
+    color: #212529;
+}
+.container.theme-green {
+    background-color: #183820;
+    border-color: #46c06b;
+    color: #212529;
+}
+
+.container.theme-blue {
+    background-color: #344b64;
+    border-color: #bbd1ea;
+    color: #212529;
+}
+
+.container.theme-red {
+    background-color: #bb0a21;
+    border-color: #f06d6a;
+    color: #212529;
+}
+
+.container.theme-yellow {
+    background-color: #ffc107;
+    border-color: #ffe082;
+    color: #212529;
+}
+
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.color-option.active {
+    border: 2px solid #333;
+}
+
+/* Message Board and Messages */
+.message-board {
+    border-radius: 10px;
+    margin: 5px;
+    padding: 15px 15px;
+    background: #fafafa;
+    max-height: 250px;
+    overflow-y: auto;
+    margin-bottom: 5px;
+}
+
+.messages {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.message {
+    background: #272424;
+    border-radius: 8px;
+    margin: 10px 0; /* Adjust the margin for spacing */
+    padding: 10px 15px;
+    animation: fade-in 0.3s;
+    color: #fff;
+}
+
+.message:nth-child(odd) {
+    background: #222020;
+}
+
+.image-message {
+    margin: 0;
+    padding: 0;
+    background: #fafafa00;
+    border-radius: 10px;
+    text-align: center;
+    animation: fade-in 0.5s;
+}
+
+.image-message img {
+    width: 100%;  /* Membuat gambar mengisi lebar kontainer */
+    height: auto; /* Menjaga rasio aspek gambar */
+    max-width: 100%; /* Membatasi lebar maksimum gambar ke ukuran kontainer */
+    max-height: 100%; /* Membatasi tinggi maksimum gambar ke ukuran kontainer */
+    border-radius: 10px;
+    object-fit: cover; /* Mengatur gambar agar tetap menutupi kontainer dengan rasio aspek yang benar */
+    margin: 0;
+    padding: 0;
+}
+
+/* Gaya khusus untuk layar laptop */
+@media (min-width: 1024px) {
+    .image-message img {
+        max-width: 50%; /* Membatasi lebar maksimum gambar ke 150% dari kontainer */
+        max-height: flex; /* Membatasi tinggi maksimum gambar ke 190px */
+        border-radius: 15px;
+    }
+}
+
+
+.image-message .description {
+    margin-top: 10px;
+    color: #111111;
+    font-size: 15px;
+    text-align: center;
+    word-wrap: break-word; /* Membuat teks dalam deskripsi bisa berpindah baris jika terlalu panjang */
+}
+/* Form */
+form {
+    display: flex;
+    border-top: 2px solid #e0e0e0;
+    padding: 5px;
+    background: #f7f7f7;
+    border-radius: 16px;
+    margin-top: 10px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-right: 10px;
+    box-shadow: 0 2px 4px rgba(172, 172, 172, 0.05);
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #999;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4d4d4d;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(5, 16, 29, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #404244;
+    box-shadow: 0 4px 8px rgba(14, 23, 34, 0.3);
+}
+
+/* Header */
+.header img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Music Control Button */
+.music-control {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #2e2f30a8;
+    cursor: pointer;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 100;
+}
+
+.music-control:focus {
+    outline: none;
+}
+
+/* Popup Styles */
+.popup-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.popup-button {
+    background-color: #3a3a3a00;
+    color: rgb(148, 147, 147);
+    border: none;
+    border-radius: 15%;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 50px;
+    font-size: 30px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.popup-button i {
+    font-size: 30px;
+}
+
+.popup-button:hover {
+    background-color: #ffffff;
+    transform: scale(1.1);
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    position: flex;
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    top: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.nav-button {
+    background-color: #3b3b3b00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #4e4e4e;
+    transform: scale(1.05);
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background-color: #f3f3f3; /* Adjusted background color */
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 30px;
+    text-align: center;
+    position: relative;
+    animation: popup-appear 0.2s ease-out; /* Add animation */
+}
+
+@keyframes popup-appear {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.close-button {
+    color: #474747;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.nav-button {
+    background-color: rgba(0, 0, 0, 0.253);
+    color: rgb(235, 235, 235);
+    border: none;
+    border-radius: 10%;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    font-size: 24px;
+    font-weight: bolder;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#prev-button {
+    left: -3px;
+}
+
+#next-button {
+    right: -3px;
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: translateY(-50%) scale(1.1);
+}
+
